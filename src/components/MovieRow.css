@@ -1,0 +1,69 @@
+.movieRow {
+    margin-bottom: 30px;
+}
+
+.movieRow h2 {
+    margin: 0px 0px 0px 30px;
+}
+
+.movieRow--listarea {
+    overflow-x: hidden;/*aqui estamos dizendo tudo que passar da tela na horizontal vai ser cortado*/
+    padding-left: 30px;
+}
+
+.movieRow--list {
+    transition: all ease 0.9s;
+    
+}
+
+.movieRow--item {
+    display: inline-block;/*isto vai fazer que cada item (imagem) fique um do lado do outro*/
+    width: 150px;
+    cursor: pointer;
+}
+
+.movieRow--item img {
+    width: 100%;
+    transform: scale(0.9);/*fazendo assim estamos definindo a imagem com tamanho de 90% de 190px(propriedade especificada no movieRow--item)*/
+    transition: all ease 0.4s;
+}
+
+.movieRow--item img:hover {
+    transform: scale(1);/*fazendo assim estamos definindo que quando passarmos o mouse por cima da imagem ele vai pegar os 100% dos 190px (propriedade especificada no movieRow--item)*/
+}
+
+.movieRow--left,
+.movieRow--right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;/*para que ele fique em cima das imagens dos filmes*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.movieRow--left {/*posicionando o icone*/
+    left: 0;
+}
+
+.movieRow--right {/*posicionando o icone*/
+    right: 0;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;/*isto faz com que ao passar o mouse na lista apareça o icone e ao retirar ele desapareça*/
+}
+
+@media (max-width: 760px) {
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+    }
+}
